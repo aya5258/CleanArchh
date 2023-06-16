@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArch.infra.Data\CleanArch.infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

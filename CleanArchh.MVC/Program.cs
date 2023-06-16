@@ -1,3 +1,4 @@
+using CleanArch.infra.Data.Context;
 using CleanArchh.MVC.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +17,15 @@ namespace CleanArchh.MVC
             builder.Services.AddDbContext<AplicationDBContext>(options =>
 
             { options.UseSqlServer(builder.Configuration.GetConnectionString("Con")); });
-                      
+
+
+
+
+
+            builder.Services.AddDbContext<UniversityDBContext>(options =>
+
+            { options.UseSqlServer(builder.Configuration.GetConnectionString("Con2")); });
+
 
             var app = builder.Build();
 
