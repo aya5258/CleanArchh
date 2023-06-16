@@ -1,6 +1,8 @@
+using CleaArch.IOC;
 using CleanArch.infra.Data.Context;
 using CleanArchh.MVC.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace CleanArchh.MVC
 {
@@ -20,14 +22,16 @@ namespace CleanArchh.MVC
 
 
 
-
+               RegisterServices(builder.Services);
 
             builder.Services.AddDbContext<UniversityDBContext>(options =>
 
             { options.UseSqlServer(builder.Configuration.GetConnectionString("Con2")); });
 
 
-            var app = builder.Build();
+         
+
+             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -49,6 +53,11 @@ namespace CleanArchh.MVC
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependancyLoader.RegisterServices(services);
         }
     }
 }

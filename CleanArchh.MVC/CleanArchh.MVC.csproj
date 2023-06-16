@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleaArch.IOC\CleaArch.IOC.csproj" />
     <ProjectReference Include="..\CleanArch.infra.Data\CleanArch.infra.Data.csproj" />
   </ItemGroup>
 
