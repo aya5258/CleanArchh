@@ -1,5 +1,7 @@
 using CleaArch.IOC;
+using CleanArch.Application.AutoMappers;
 using CleanArch.infra.Data.Context;
+using CleanArchh.MVC.Configurations;
 using CleanArchh.MVC.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -26,13 +28,14 @@ namespace CleanArchh.MVC
                RegisterServices(builder.Services);
 
             builder.Services.AddMediatR();
+            builder.Services.RegisterAutoMapper();
 
             builder.Services.AddDbContext<UniversityDBContext>(options =>
 
             { options.UseSqlServer(builder.Configuration.GetConnectionString("Con2")); });
 
 
-         
+           
 
              var app = builder.Build();
 

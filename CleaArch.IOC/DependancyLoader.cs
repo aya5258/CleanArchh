@@ -36,6 +36,7 @@ namespace CleaArch.IOC
 
             //infra.Data layer
             Services.AddScoped<ICourseRepository, CourseRepository>();
+      
 
             Services.AddScoped<UniversityDBContext>();
         }

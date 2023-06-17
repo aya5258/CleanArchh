@@ -10,7 +10,7 @@ namespace CleanArch.Domain.Interfaces
     public interface ICourseRepository
     {
 
-        IEnumerable<Coures> GetCourses();
+        IQueryable<Coures> GetCourses();
 
         void Add(Coures coures);
     }

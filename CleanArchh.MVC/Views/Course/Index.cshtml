@@ -1,4 +1,4 @@
-﻿@model CleanArch.Application.ViewModels.CourseViewModel
+﻿@model IEnumerable< CleanArch.Application.ViewModels.CourseViewModel>
 <div class="container body-content">
 
 
@@ -6,7 +6,7 @@
 
 
 
-        @foreach (var course in Model.Courses)
+        @foreach (var course in Model)
         {
            <div class="course-image-container">
                 <div class="course-image" style="background-image:url(@course.ImgURL)"> </div>
