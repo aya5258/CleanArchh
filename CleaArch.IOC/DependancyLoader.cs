@@ -1,10 +1,13 @@
 ﻿using CleanArch.Application.interfaces;
 using CleanArch.Application.Services;
+using CleanArch.Domain.CommandHandlers;
+using CleanArch.Domain.Commands;
 using CleanArch.Domain.Core.Bus;
 using CleanArch.Domain.Interfaces;
 using CleanArch.infra.Data.Context;
 using CleanArch.infra.Data.Repository;
 using CleanArch.Infra.Bus;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -24,6 +27,11 @@ namespace CleaArch.IOC
             Services.AddScoped<IMediatorHandler, InMemoryBus>();
             //ApplicationLayer
             Services.AddScoped<ICourseService, CourseService>();
+
+
+
+            //Domain Handlers
+            Services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
 
 
             //infra.Data layer
