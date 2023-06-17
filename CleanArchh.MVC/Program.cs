@@ -1,6 +1,7 @@
 using CleaArch.IOC;
 using CleanArch.infra.Data.Context;
 using CleanArchh.MVC.Data;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 
@@ -23,6 +24,8 @@ namespace CleanArchh.MVC
 
 
                RegisterServices(builder.Services);
+
+            builder.Services.AddMediatR();
 
             builder.Services.AddDbContext<UniversityDBContext>(options =>
 
@@ -58,6 +61,7 @@ namespace CleanArchh.MVC
         private static void RegisterServices(IServiceCollection services)
         {
             DependancyLoader.RegisterServices(services);
+
         }
     }
 }
